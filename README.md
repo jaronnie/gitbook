@@ -9,10 +9,10 @@
 # 使用
 
 ```shell
-sudo docker pull gocloudcoder/gitbook:clear
+docker pull gocloudcoder/gitbook:clear
 ```
 
-将如下脚本命名为 gitbook.sh，并放在PATH下。
+将如下脚本命名为 gitbook，赋予可执行权限，并放在PATH下。
 
 ```shell
 # filename: gitbook.sh
@@ -20,14 +20,8 @@ sudo docker pull gocloudcoder/gitbook:clear
 # usage:
 # gitbook serve
 # gitbook build
-
-if [ $1 == "build" ]
-then
-        sudo docker run --rm -v $PWD:/gitbook gocloudcoder/gitbook:clear gitbook build
-elif [ $1 == "serve" ]
-then
-        sudo docker run --rm -p 4000:4000 -v $PWD:/gitbook gocloudcoder/gitbook:clear gitbook serve
-fi
+#!/bin/bash
+docker run --rm -v $PWD:/gitbook gocloudcoder/gitbook:clear gitbook $*
 ```
 
 ### example
@@ -38,7 +32,7 @@ test文件下为例子。
 
 * gitbook serve
 
-  > localhost:4000 访问
+  > localhost:4000 访问电子书
 
 * gitbook build
 

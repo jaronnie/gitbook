@@ -1,0 +1,9 @@
+# filename: gitbook
+# chmod +x gitbook
+# author: gocloudcoder
+# usage: 
+# gitbook serve
+# gitbook build
+
+#!/bin/bash
+sudo docker run --rm -p 4000:4000 -v $PWD:/gitbook gocloudcoder/gitbook:clear gitbook $*
