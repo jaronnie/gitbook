@@ -6,4 +6,4 @@
 # gitbook build
 
 #!/bin/bash
-sudo docker run --rm -p 4000:4000 -v $PWD:/gitbook gocloudcoder/gitbook:clear gitbook $*
+docker run --rm -p 4000:4000 -v $PWD:/gitbook gocloudcoder/gitbook:clear gitbook $*
